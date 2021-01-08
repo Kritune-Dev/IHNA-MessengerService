@@ -2,7 +2,7 @@ const supertest = require('supertest')
 const app = require('../../src/app')
 const http = require('http')
 
-const endpointUrl = "/api/messengerService"
+const endpointUrl = "/api/MessengerService"
 var server, request
 
 beforeAll((done) => {
