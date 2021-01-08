@@ -1,4 +1,4 @@
-const Controller = require('../../src/controllers/calendar_service.controller')
+const Controller = require('../../src/controllers/messenger_service.controller')
 const Utils = require("../../src/utils")
 const httpMocks = require('node-mocks-http')
 const packageJson = require('../../package.json')
