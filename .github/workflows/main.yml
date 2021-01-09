@@ -31,4 +31,4 @@ jobs:
             cd ~/IHNA/IHNA_MessengerService/
             git pull
             npm install
-            pm2 restart MessengerService  
+            pm2 restart Service  
