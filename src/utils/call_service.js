@@ -1,11 +1,10 @@
 const axios = require('axios')
-const ihna_service = require('../../../IHNA_Utils/ihna_service')
+const {AppService} = require('../../../IHNA_Utils/ihna_service')
 
-const ihna_AppService = ihna_service.AppService
 
 exports.callEtaService = () => {
     return new Promise((resolve, reject) => {
-        axios.get(ihna_AppService + '/About')
+        axios.get(AppService + '/About')
         .then(response => {
             var message = `Application - v.${response.data.IHNA_App.version} - [🟢] \n` + 
                 `CalendarService - v.${response.data.IHNA_CalendarService.version} - ${response.data.IHNA_CalendarService.working ? "[🟢]" : "[🔴]"}\n` +

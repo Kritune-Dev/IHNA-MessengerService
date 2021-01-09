@@ -18,7 +18,7 @@ String.prototype.toHHMMSS = function () {
 function getUptime () {
     var time = process.uptime()
     var uptime = (time + "").toHHMMSS()
-    console.log(uptime)
+    return uptime
 }
 
 function getGitCommit() {

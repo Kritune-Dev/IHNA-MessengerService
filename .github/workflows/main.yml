@@ -1,4 +1,4 @@
-name: CI / CD / Bump Tag
+name: CI/CD
 
 on:
   push:
@@ -14,6 +14,12 @@ jobs:
 
       - name: Install 🔧
         run: npm install
+      
+      - name: GitGuardian scan 🔍
+        uses: GitGuardian/gg-shield-action@master
+        env:
+          GITHUB_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
       - name: Lint 🧐
         run: npm run lint:check
