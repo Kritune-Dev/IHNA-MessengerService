@@ -9,6 +9,7 @@ beforeAll((done) => {
   server = http.createServer(app)
   server.listen(done)
   request = supertest(server)
+  process.env.NODE_ENV = 'test'
 })
 
 afterAll((done) => {

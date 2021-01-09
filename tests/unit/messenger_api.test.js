@@ -10,6 +10,7 @@ beforeEach(() => {
   req = httpMocks.createRequest()
   res = httpMocks.createResponse()
   next = jest.fn()
+  process.env.NODE_ENV = 'test'
 })
 
 describe('API Messenger', () => {

@@ -1,4 +1,4 @@
-name: Node CI
+name: CI / CD / Bump Tag
 
 on:
   push:
@@ -36,4 +36,11 @@ jobs:
             cd ~/IHNA/IHNA_MessengerService/
             git pull
             npm install
-            NODE_ENV=production pm2 restart Messenger  
+            NODE_ENV=production pm2 restart Messenger
+
+      - name: Bump version and push tag 🆚
+        uses: anothrNick/github-tag-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
