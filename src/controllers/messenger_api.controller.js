@@ -48,7 +48,6 @@ exports.messageWebhook = (req, res) => {
         req.body.entry.forEach(entry => {
         entry.messaging.forEach(event => {
             if (event.message && event.message.text) {
-                console.log(event)
                 this.processMessage(event)                
             }
         })
