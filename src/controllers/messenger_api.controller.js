@@ -1,7 +1,6 @@
 const fetch = require('node-fetch')
 const callService = require('../utils/call_service')
-var {FACEBOOK_ACCESS_TOKEN} = require('../../../IHNA_Utils/ihna_facebook_key')
-
+var FACEBOOK_ACCESS_TOKEN = process.env.NODE_ENV === 'test' ? "foo" : require('../../../IHNA_Utils/ihna_facebook_key').FACEBOOK_ACCESS_TOKEN
 
 exports.sendTextMessage = (userId, text) => {
     return fetch(

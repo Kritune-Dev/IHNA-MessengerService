@@ -1,4 +1,4 @@
-var {VERIFY_TOKEN} = require('../../../IHNA_Utils/ihna_facebook_key')
+var VERIFY_TOKEN = process.env.NODE_ENV === 'test' ? "foo" : require('../../../IHNA_Utils/ihna_facebook_key').VERIFY_TOKEN
 
 exports.verifyWebhook = (req, res) => {
     let mode = req.query['hub.mode']
