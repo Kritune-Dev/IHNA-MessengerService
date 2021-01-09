@@ -21,6 +21,11 @@ jobs:
       - name: Test 🚨
         run: npm test
 
+      - name: Upload coverage to Codecov 🌂
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Deploy 🏠
         uses: appleboy/ssh-action@v0.1.2
         with:

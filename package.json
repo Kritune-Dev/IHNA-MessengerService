@@ -7,7 +7,7 @@
     "lint:check": "eslint .",
     "lint:fix": "eslint . --fix",
     "test:dev": "jest --detectOpenHandles --watchAll",
-    "test:cov": "jest --coverage --force-exit --detectOpenHandles",
+    "test:cov": "jest --ci --coverage && codecov -t :d7066939-57eb-4db8-bc79-19457f058771",
     "test": "jest --force-exit --detectOpenHandles",
     "serve": "nodemon src/server.js",
     "start": "node src/server.js",
@@ -23,6 +23,7 @@
   "author": "Kritune",
   "license": "ISC",
   "devDependencies": {
+    "codecov": "^3.8.1",
     "eslint": "^7.17.0",
     "jest": "^26.6.3",
     "node-mocks-http": "^1.9.0",
