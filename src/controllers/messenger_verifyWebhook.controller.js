@@ -1,6 +1,6 @@
-exports.verifyWebhook = (req, res) => {
-    let VERIFY_TOKEN = 'grbfoncq5643znrnn5463uo9678HGJ09678kbvjkbhv493'
+var {VERIFY_TOKEN} = require('../../../IHNA_Utils/ihna_facebook_key')
 
+exports.verifyWebhook = (req, res) => {
     let mode = req.query['hub.mode']
     let token = req.query['hub.verify_token']
     let challenge = req.query['hub.challenge']

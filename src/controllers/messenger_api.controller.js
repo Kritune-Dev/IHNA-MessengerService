@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const callService = require('../utils/call_service')
+var {FACEBOOK_ACCESS_TOKEN} = require('../../../IHNA_Utils/ihna_facebook_key')
 
-const FACEBOOK_ACCESS_TOKEN = 'EAAGR4IZAk5bkBAD9fzDm5bGx3E8GyOCNPSRgOFv7hV7ZAQ7unAPN2MfTSDrSCuRVpmKlfWScgcRwll3fNCcsFytEzuXV7cW3VWK0U24JHBbec8pZCC8TMtq9B3Og7a3TGWT6b8BnhITAobZCT1pPxEV9nPtpDV8rt2hLO4hf9h6SXkZBKJLRo3rZBuZAm7UgZBYZD'
 
 exports.sendTextMessage = (userId, text) => {
     return fetch(

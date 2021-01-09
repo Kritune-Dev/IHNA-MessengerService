@@ -7,10 +7,10 @@
     "lint:check": "eslint .",
     "lint:fix": "eslint . --fix",
     "test:dev": "jest --detectOpenHandles --watchAll",
-    "test:cov": "jest --ci --coverage && codecov -t :d7066939-57eb-4db8-bc79-19457f058771",
+    "test:cov": "jest --coverage",
     "test": "jest --force-exit --detectOpenHandles",
     "serve": "nodemon src/server.js",
-    "start": "node src/server.js",
+    "start": "NODE_ENV=production node src/server.js",
     "preversion": "git fetch --tags && npm run lint:check && npm test",
     "version": "npm run build",
     "postversion": "git push --follow-tags"
@@ -36,6 +36,7 @@
     "express": "^4.17.1",
     "i": "^0.3.6",
     "node-fetch": "^2.6.1",
-    "pm2": "^4.5.1"
+    "pm2": "^4.5.1",
+    "simple-git": "^2.31.0"
   }
 }
