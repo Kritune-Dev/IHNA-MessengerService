@@ -1,0 +1,9 @@
+{
+  "sender": { "id": "3549709001763269" },
+  "recipient": { "id": "104775778245964" },
+  "timestamp": 1610152336829,
+  "message": {
+    "mid": "m_vu8YiV6rUIgGuvWM5awauTuDl4hoHJjD8xDQUK9KjLUwvQJo_4vH8Q9t2rNgZVkWLzBoqQty9m7XtNvGCMD_Xw",
+    "text": "ping"
+  }
+}

@@ -1,5 +1,5 @@
 const Controller = require('../../src/controllers/messenger_service.controller')
-const Utils = require("../../src/utils")
+const Utils = require("../../src/utils/utils")
 const httpMocks = require('node-mocks-http')
 const packageJson = require('../../package.json')
 
