@@ -1,5 +1,7 @@
 exports.packageParseInformation= (packageJson) => {
-  return {name: packageJson.name, version: packageJson.version, uptime: getUptime(), revision: getGitCommit()}
+  const uptime = getUptime()
+  const revision = getGitCommit()
+  return {name: packageJson.name, version: packageJson.version, uptime: uptime, revision: revision}
 }
 
 String.prototype.toHHMMSS = function () {
