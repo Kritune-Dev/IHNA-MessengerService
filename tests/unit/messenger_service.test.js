@@ -1,5 +1,5 @@
 const Controller = require('../../src/controllers/messenger_service.controller')
-const Utils = require("../../src/utils/utils")
+const Utils = require('../../src/utils/utils')
 const httpMocks = require('node-mocks-http')
 const packageJson = require('../../package.json')
 
@@ -34,15 +34,15 @@ describe('Get information', () => {
   })
 
   it('Should return name and version in response', async () => {
-    Utils.packageParseInformation.mockReturnValue({name: "ihna_calendarservice", version: "1.0.0"})
+    Utils.packageParseInformation.mockReturnValue({name: 'ihna_calendarservice', version: '1.0.0'})
 
     await Controller.getInformation(req, res, next)
 
-    expect(res._getJSONData()).toStrictEqual({name: "ihna_calendarservice", version: "1.0.0"})
+    expect(res._getJSONData()).toStrictEqual({name: 'ihna_calendarservice', version: '1.0.0'})
   })
 
   it('Should handle errors', async () => {
-    const errorMessage = {message: "Error finding"}
+    const errorMessage = {message: 'Error finding'}
     const rejectedPromise = Promise.reject(errorMessage)
     Utils.packageParseInformation.mockReturnValue(rejectedPromise)
 

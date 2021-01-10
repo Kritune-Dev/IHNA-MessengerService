@@ -14,22 +14,22 @@ beforeEach(() => {
 })
 
 describe('API Messenger', () => {
-    describe('Message Webhook', () => {
+  describe('Message Webhook', () => {
 
-        it('Should have a messageWebhook function', () => {
-          expect(typeof Controller.messageWebhook).toBe('function')
-        })
-      
-        it('Should return 200 response code', async () => {
-          await Controller.messageWebhook(req, res, next)
-      
-          expect(res.statusCode).toBe(200)
-        })
+    it('Should have a messageWebhook function', () => {
+      expect(typeof Controller.messageWebhook).toBe('function')
     })
+      
+    it('Should return 200 response code', async () => {
+      await Controller.messageWebhook(req, res, next)
+      
+      expect(res.statusCode).toBe(200)
+    })
+  })
 
-    describe('Process Message', () => {
-        it('Should have a processMessage function', () => {
-            expect(typeof Controller.processMessage).toBe('function')
-          })        
-    })
+  describe('Process Message', () => {
+    it('Should have a processMessage function', () => {
+      expect(typeof Controller.processMessage).toBe('function')
+    })        
+  })
 })
