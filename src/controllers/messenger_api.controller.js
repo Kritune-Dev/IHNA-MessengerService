@@ -31,7 +31,7 @@ exports.processMessage = async (event) => {
   case 'ping' :
     message = 'Pong 🏓'
     break
-  case 'Etats micros-services' :
+  case 'etats micros-services' :
     message = await callService.callEtaService()
     break
   default:
