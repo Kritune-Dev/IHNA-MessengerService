@@ -37,7 +37,7 @@ exports.processMessage = async (event) => {
   default:
     message = 'Les commandes disponibles sont : \n' 
       + ' - Ping\n'
-      + ' - Etats micro-services'
+      + ' - Etats micros-services'
     break
   }
 

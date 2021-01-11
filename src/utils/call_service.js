@@ -6,10 +6,10 @@ exports.callEtaService = () => {
   return new Promise((resolve, reject) => {
     axios.get(process.env.APP_SERVICE + '/About')
       .then(response => {
-        var message = `Application - v.${response.data.IHNA_App.version} - [🟢] \n` + 
-                `CalendarService ${getInfos(response.data.IHNA_CalendarService)}` +
-                `CalendarWorker ${getInfos(response.data.IHNA_CalendarWorker)}` +
-                `MessengerService ${getInfos(response.data.IHNA_MessengerService)}`
+        var message = `Application - v.${response.data.IHNA_App.version} - [🟢] \n`
+        message += 'CalendarService' + getInfos(response.data.IHNA_CalendarService)
+        message += 'CalendarWorker' + getInfos(response.data.IHNA_CalendarWorker)
+        message += 'MessengerService' + getInfos(response.data.IHNA_MessengerService)
         resolve(message)            
       })
       .catch(error => {
