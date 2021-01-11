@@ -6,7 +6,7 @@ exports.callEtaService = () => {
   return new Promise((resolve, reject) => {
     axios.get(process.env.APP_SERVICE + '/About')
       .then(response => {
-        var message = '------------- Etats des micro-services ------------'
+        var message = '------------- Etats des micro-services ------------\n'
         message += getInfos(response.data.IHNA_App, 'Application')
         message += getInfos(response.data.IHNA_CalendarService, 'CalendarService')
         message += getInfos(response.data.IHNA_CalendarWorker, 'CalendarWorker')

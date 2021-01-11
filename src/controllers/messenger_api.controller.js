@@ -34,18 +34,18 @@ exports.processMessage = async (event) => {
   case 'etats micros-services' :
     message = await callService.callEtaService()
     break
-  case '[debug] getid' :
+  case 'getid' :
     message = event.sender.id
     break
-  case '[debug] getsender' :
-    message = event.sender
+  case 'getsender' :
+    message = JSON.parse(event.sender)
     break
   default:
     message = 'Les commandes disponibles sont : \n' 
       + ' - Ping\n'
       + ' - Etats micros-services\n'
-      + ' - GetId\n'
-      + ' - GetSender\n'
+      + ' - GetId [Debug]\n'
+      + ' - GetSender [Debug]\n'
     break
   }
 
