@@ -6,10 +6,11 @@ exports.callEtaService = () => {
   return new Promise((resolve, reject) => {
     axios.get(process.env.APP_SERVICE + '/About')
       .then(response => {
-        var message = `Application - v.${response.data.IHNA_App.version} - [🟢] \n`
-        message += 'CalendarService' + getInfos(response.data.IHNA_CalendarService)
-        message += 'CalendarWorker' + getInfos(response.data.IHNA_CalendarWorker)
-        message += 'MessengerService' + getInfos(response.data.IHNA_MessengerService)
+        var message = '------------- Etats des micro-services ------------'
+        message += getInfos(response.data.IHNA_App, 'Application')
+        message += getInfos(response.data.IHNA_CalendarService, 'CalendarService')
+        message += getInfos(response.data.IHNA_CalendarWorker, 'CalendarWorker')
+        message += getInfos(response.data.IHNA_MessengerService, 'MessengerService')
         resolve(message)            
       })
       .catch(error => {
@@ -18,7 +19,7 @@ exports.callEtaService = () => {
   })
 }
 
-function getInfos(Name) {
-  var ret = `v.${Name.version} - ${Name.working ? '[🟢]' : '[🔴]'} - Uptime : ${Name.uptime}\n`
+function getInfos(Name, service) {
+  var ret = `${Name.working ? '[🟢]' : '[🔴]'} - ${service} v.${Name.version} - Uptime : ${Name.uptime}\n`
   return ret
 }
