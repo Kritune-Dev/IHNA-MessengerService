@@ -29,13 +29,15 @@ exports.processMessage = async (event) => {
 
   switch (event.message.text.toLowerCase()) {
   case 'ping' :
-    message = 'pong'
+    message = 'Pong 🏓'
     break
-  case 'etats micros-services' :
+  case 'Etats micros-services' :
     message = await callService.callEtaService()
     break
   default:
-    message = 'Message reçu : ' + event.message.text
+    message = 'Les commandes disponibles sont : \n' 
+      + ' - Ping\n'
+      + ' - Etats micro-services'
     break
   }
 

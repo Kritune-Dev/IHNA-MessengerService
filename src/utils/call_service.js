@@ -7,13 +7,17 @@ exports.callEtaService = () => {
     axios.get(process.env.APP_SERVICE + '/About')
       .then(response => {
         var message = `Application - v.${response.data.IHNA_App.version} - [🟢] \n` + 
-                `CalendarService - v.${response.data.IHNA_CalendarService.version} - ${response.data.IHNA_CalendarService.working ? '[🟢]' : '[🔴]'}\n` +
-                `CalendarWorker - v.${response.data.IHNA_CalendarWorker.version} - ${response.data.IHNA_CalendarWorker.working ? '[🟢]' : '[🔴]'}\n` +
-                `MessengerService - v.${response.data.IHNA_MessengerService.version} - ${response.data.IHNA_MessengerService.working ? '[🟢]' : '[🔴]'}\n`
+                `CalendarService ${getInfos(response.data.IHNA_CalendarService)}` +
+                `CalendarWorker ${getInfos(response.data.IHNA_CalendarWorker)}` +
+                `MessengerService ${getInfos(response.data.IHNA_MessengerService)}`
         resolve(message)            
       })
       .catch(error => {
         reject(error)
       })
   })
+}
+
+function getInfos(Name) {
+  return - `v.${Name.version} - ${Name.working ? '[🟢]' : '[🔴]'} - Uptime : ${Name.uptime}\n`
 }
