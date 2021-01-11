@@ -19,5 +19,6 @@ exports.callEtaService = () => {
 }
 
 function getInfos(Name) {
-  return - `v.${Name.version} - ${Name.working ? '[🟢]' : '[🔴]'} - Uptime : ${Name.uptime}\n`
+  var ret = `v.${Name.version} - ${Name.working ? '[🟢]' : '[🔴]'} - Uptime : ${Name.uptime}\n`
+  return ret
 }
